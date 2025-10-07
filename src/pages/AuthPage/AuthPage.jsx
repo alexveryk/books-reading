@@ -1,3 +1,11 @@
+import { AuthIntro } from "../../components/AuthIntro/AuthIntro";
+import { Menu } from "../../components/Menu/Menu";
+
 export const AuthPage = () => {
-  return <h1>AuthPage</h1>;
+  return (
+    <>
+      <Menu />
+      <AuthIntro />
+    </>
+  );
 };
