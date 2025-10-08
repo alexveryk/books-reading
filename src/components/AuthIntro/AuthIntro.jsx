@@ -1,24 +1,28 @@
 import { Container } from "../Container/Container";
-import { ListItem, SubTitle, Title } from "./AuthIntro.styled";
+import { List, ListItem, SubTitle, Title } from "./AuthIntro.styled";
 
 export const AuthIntro = () => {
   return (
     <Container>
       <Title>Books Reading</Title>
       <SubTitle>Допоможе вам</SubTitle>
-      <ul>
+      <List>
         <ListItem>Швидше сформулювати свою ціль і розпочати читати</ListItem>
         <ListItem>Пропорційно розподілити навантаження на кожний день</ListItem>
         <ListItem>Відстежувати особистий успіх</ListItem>
-      </ul>
+      </List>
       <SubTitle>Також ви зможете </SubTitle>
-      <ul>
+      <List>
         <ListItem>Формувати особисту думку незалежну від інших</ListItem>
         <ListItem>
           Підвищити свої професійні якості опираючись на нові знання
         </ListItem>
         <ListItem>Стати цікавим співрозмовником</ListItem>
-      </ul>
+      </List>
+      <div>
+        <button>Увійти</button>
+        <button>Зареєструватися</button>
+      </div>
     </Container>
   );
 };
