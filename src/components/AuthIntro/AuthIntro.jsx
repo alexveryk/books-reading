@@ -1,7 +1,16 @@
+import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
-import { List, ListItem, SubTitle, Title } from "./AuthIntro.styled";
+import checkIcon from "../../assets/check.svg";
+import {
+  List,
+  ListItem,
+  SubTitle,
+  Title,
+  ButtonWrapper,
+} from "./AuthIntro.styled";
 
 export const AuthIntro = () => {
+  console.log(checkIcon);
   return (
     <Container>
       <Title>Books Reading</Title>
@@ -19,10 +28,10 @@ export const AuthIntro = () => {
         </ListItem>
         <ListItem>Стати цікавим співрозмовником</ListItem>
       </List>
-      <div>
-        <button>Увійти</button>
-        <button>Зареєструватися</button>
-      </div>
+      <ButtonWrapper>
+        <Button type={"secondary"}>Увійти</Button>
+        <Button type={"main"}>Реєстрація</Button>
+      </ButtonWrapper>
     </Container>
   );
 };
