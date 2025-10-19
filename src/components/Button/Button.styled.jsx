@@ -28,3 +28,21 @@ export const MainButton = styled.button`
   background-color: #ff6b08;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 `;
+
+export const GoogleButton = styled.button`
+
+  color: #707375;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 2.38;
+  border: none;
+  width: 150px;
+  height: 40px;
+  background-color: #F5F7FA;
+
+  box-shadow: 0 2px 2px 0 rgba(9, 30, 63, 0.15);
+  margin-botoom:
+
+`

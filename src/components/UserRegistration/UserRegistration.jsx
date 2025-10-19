@@ -1,18 +1,23 @@
 import { Formik } from "formik";
+import { Container } from "../Container/Container";
+import { Button } from "../Button/Button";
+import { UserRegistartionWraper } from "./UserRegistration.styled";
 
 export const UserRegistration = () => {
     return (
-        <>
-         <Formik
+        <Container>
+          <UserRegistartionWraper >
+          <Button type="googleButton" mb="20px">Google</Button>
+                   <Formik
        initialValues={{ email: '', password: '' }}
        validate={values => {
          const errors = {};
          if (!values.email) {
-           errors.email = 'Required';
+           errors.email = "Обов'язково";
          } else if (
            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
          ) {
-           errors.email = 'Invalid email address';
+           errors.email = 'Невірна електронна пошта';
          }
          return errors;
        }}
@@ -56,6 +61,9 @@ export const UserRegistration = () => {
          </form>
        )}
      </Formik>
-        </>
+     </UserRegistartionWraper>
+        </Container>
+
+  
     )
 }
