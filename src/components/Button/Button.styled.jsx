@@ -15,7 +15,8 @@ export const SecondaryButton = styled.button`
 `;
 
 export const MainButton = styled.button`
-  width: 130px;
+  /* width: 130px; */
+  ${({ w }) => w && `width: ${w};`}
   height: 40px;
   color: #fff;
   border: none;
@@ -30,7 +31,6 @@ export const MainButton = styled.button`
 `;
 
 export const GoogleButton = styled.button`
-
   color: #707375;
   text-align: center;
   font-family: Roboto;
@@ -40,9 +40,8 @@ export const GoogleButton = styled.button`
   border: none;
   width: 150px;
   height: 40px;
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
 
   box-shadow: 0 2px 2px 0 rgba(9, 30, 63, 0.15);
-  margin-botoom:
-
-`
+  ${({ mb }) => mb && `margin-bottom: ${mb};`}
+`;
