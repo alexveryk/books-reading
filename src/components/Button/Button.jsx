@@ -7,7 +7,11 @@ export const Button = ({ children, type, mb, height, w }) => {
   }
 
   if (type === "main") {
-    return <MainButton w={w}>{children}</MainButton>;
+    return (
+      <MainButton mb={mb} w={w}>
+        {children}
+      </MainButton>
+    );
   }
 
   if (type === "googleButton") {

@@ -5,6 +5,10 @@ import {
   UserRegistartionWraper,
   Label,
   Input,
+  AlreadyWithUsText,
+  ToLoginPageButton,
+  AlreadyWithUs,
+  RequiredMark,
 } from "./UserRegistration.styled";
 
 export const UserRegistration = () => {
@@ -15,18 +19,19 @@ export const UserRegistration = () => {
           Google
         </Button>
         <Formik
-          initialValues={{ email: "", password: "" }}
-          validate={(values) => {
-            const errors = {};
-            if (!values.email) {
-              errors.email = "Обов'язково";
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = "Невірна електронна пошта";
-            }
-            return errors;
-          }}
+          initialValues={{ email: "", password: "", userName: "" }}
+          // Валідація форми, додати після нарисання форми
+          // validate={(values) => {
+          //   const errors = {};
+          //   if (!values.email) {
+          //     errors.email = "Обов'язково";
+          //   } else if (
+          //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          //   ) {
+          //     errors.email = "Невірна електронна пошта";
+          //   }
+          //   return errors;
+          // }}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
@@ -44,8 +49,23 @@ export const UserRegistration = () => {
             /* and other goodies */
           }) => (
             <form onSubmit={handleSubmit}>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="userName">
+                Ім’я <RequiredMark>*</RequiredMark>
+              </Label>
               <Input
+                placeholder="..."
+                type="text"
+                name="userName"
+                id="userName"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.userName}
+              />
+              <Label htmlFor="email">
+                Електронна адреса <RequiredMark>*</RequiredMark>
+              </Label>
+              <Input
+                placeholder="your@email.com"
                 type="email"
                 name="email"
                 id="email"
@@ -54,8 +74,11 @@ export const UserRegistration = () => {
                 value={values.email}
               />
               {errors.email && touched.email && errors.email}
-              <Label htmlFor="password">Пароль:</Label>
+              <Label htmlFor="password">
+                Пароль <RequiredMark>*</RequiredMark>
+              </Label>
               <Input
+                placeholder="..."
                 id="password"
                 type="password"
                 name="password"
@@ -64,12 +87,28 @@ export const UserRegistration = () => {
                 value={values.password}
               />
               {errors.password && touched.password && errors.password}
-              <Button type="main" w="100%" disabled={isSubmitting}>
+              <Label htmlFor="password">
+                Підтвердити пароль <RequiredMark>*</RequiredMark>
+              </Label>
+              <Input
+                placeholder="..."
+                id="password"
+                type="password"
+                name="password"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.password}
+              />
+              <Button type="main" mb={"20px"} w="100%" disabled={isSubmitting}>
                 Зареєструватися
               </Button>
             </form>
           )}
         </Formik>
+        <AlreadyWithUs>
+          <AlreadyWithUsText>Вже з нами?</AlreadyWithUsText>
+          <ToLoginPageButton>Увійти</ToLoginPageButton>
+        </AlreadyWithUs>
       </UserRegistartionWraper>
     </Container>
   );

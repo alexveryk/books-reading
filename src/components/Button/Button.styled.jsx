@@ -16,7 +16,7 @@ export const SecondaryButton = styled.button`
 
 export const MainButton = styled.button`
   /* width: 130px; */
-  ${({ w }) => w && `width: ${w};`}
+  ${({ w }) => w && `width: ${w};`};
   height: 40px;
   color: #fff;
   border: none;
@@ -28,6 +28,8 @@ export const MainButton = styled.button`
 
   background-color: #ff6b08;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+  ${({ mb }) => mb && `margin-bottom: ${mb};`}
 `;
 
 export const GoogleButton = styled.button`
