@@ -24,6 +24,9 @@ export const List = styled.ul`
   margin-bottom: 24px;
   &:last-of-type {
     margin-bottom: 60px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -62,4 +65,8 @@ export const ButtonWrapper = styled.div`
   justify-content: space-around;
   gap: 20px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
